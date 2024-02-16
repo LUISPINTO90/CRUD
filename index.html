@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD</title>
+
+    <!-- Tailwind CSS -->
+    <link href="./src/css/output.css" rel="stylesheet" />
+
+    <!-- Google Font Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <section class="px-10 py-10">
+      <h1 class="text-5xl font-extrabold mb-10 text-gray-800">Alumnos</h1>
+      <p class="text-lg">
+        CRUD para la gesti&oacute;n de alumnos de la Universidad de Colima.
+      </p>
+      <hr class="mt-8 border-t-2 border-slate-300 text-gray-700" />
+    </section>
+
+    <!-- Formulario -->
+    <section class="px-10 py-10" id="formStudents">
+      <h2 class="uppercase text-lg font-bold mb-6 text-gray-800">Formulario</h2>
+      <form action="#" id="formAdd" class="mt-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div>
+            <label
+              for="accountNumber"
+              class="block text-lg font-medium text-gray-700"
+            >
+              N&uacute;mero de cuenta
+            </label>
+            <input
+              type="number"
+              id="accountNumber"
+              class="p-2 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-md text-lg border-gray-300 rounded-md"
+            />
+          </div>
+          <div>
+            <label
+              for="studentEmail"
+              class="block text-lg font-medium text-gray-700"
+            >
+              Correo electrónico
+            </label>
+            <input
+              type="email"
+              id="studentEmail"
+              class="p-2 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-md text-lg border-gray-300 rounded-md"
+            />
+          </div>
+          <div>
+            <label
+              for="studentName"
+              class="block text-lg font-medium text-gray-700"
+            >
+              Nombre(s)
+            </label>
+            <input
+              type="text"
+              id="studentName"
+              class="p-2 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-md text-lg border-gray-300 rounded-md"
+            />
+          </div>
+
+          <div>
+            <label
+              for="studentSchool"
+              class="block text-lg font-medium text-gray-700"
+            >
+              Escuela
+            </label>
+            <select
+              id="studentSchool"
+              class="p-3 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-md text-lg border-gray-300 rounded-md"
+            >
+              <option value="">Selecciona una escuela</option>
+              <option value="1">Facultad de Telem&aacute;tica</option>
+              <option value="2">
+                Facultad de Ingenier&iacute;a Mec&aacute;nica y
+                El&eacute;ctronica
+              </option>
+              <option value="3">
+                Facultad de Contabilidad y Administraci&oacute;n
+              </option>
+              <option value="4">Facultad de Medicina</option>
+              <option value="5">Facultad de Derecho</option>
+              <option value="6">Facultad de Arquitectura</option>
+              <option value="7">
+                Facultad de Ciencias de la Educaci&oacute;n
+              </option>
+              <option value="8">Facultad de Psicolog&iacute;a</option>
+            </select>
+          </div>
+        </div>
+        <div class="mt-10">
+          <button
+            class="inline-flex items-center px-4 py-2 border border-transparent text-lg font-medium rounded-md shadow-sm text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+            id="addStudentButton"
+          >
+            Crear Alumno
+          </button>
+        </div>
+      </form>
+      <hr class="mt-8 border-t-2 border-slate-300 text-gray-700" />
+    </section>
+
+    <!-- Tabla -->
+    <section class="px-10 py-10" id="tableStudents">
+      <h2 class="uppercase text-lg font-bold mb-10 text-gray-800">
+        Tabla de alumnos
+      </h2>
+      <div class="mb-10"></div>
+      <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-full text-lg text-left rtl:text-right text-gray-500">
+          <thead class="text-lg text-gray-700 uppercase bg-gray-300">
+            <tr>
+              <th scope="col" class="px-6 py-3">N&uacute;mero de cuenta</th>
+              <th scope="col" class="px-6 py-3">Correo electr&oacute;nico</th>
+              <th scope="col" class="px-6 py-3">Nombre</th>
+              <th scope="col" class="px-6 py-3">Escuela</th>
+              <th scope="col" class="px-6 py-3">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Scripts -->
+    <script type="module" src="./src/index.js"></script>
+  </body>
+</html>
