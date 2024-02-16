@@ -18,7 +18,9 @@ let tableBody = document.getElementById("tableBody");
 // DOM Events
 
 // Add student
-addStudentButton.addEventListener("click", () => {
+addStudentButton.addEventListener("click", (e) => {
+  e.preventDefault();
+
   let student = new Student(
     accountNumber.value,
     studentEmail.value,
